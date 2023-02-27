@@ -1,5 +1,15 @@
 # **ZoeDepth: Combining relative and metric depth** (Official implementation)  <!-- omit in toc -->
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) ![PyTorch](https://img.shields.io/badge/PyTorch_v1.10.1-EE4C2C?&logo=pytorch&logoColor=white) 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zoedepth-zero-shot-transfer-by-combining/monocular-depth-estimation-on-nyu-depth-v2)](https://paperswithcode.com/sota/monocular-depth-estimation-on-nyu-depth-v2?p=zoedepth-zero-shot-transfer-by-combining)
+
+>#### [ZoeDepth: Zero-shot Transfer by Combining Relative and Metric Depth](https://arxiv.org/abs/2302.12288)
+> ##### [Shariq Farooq Bhat](https://shariqfarooq123.github.io), [Reiner Birkl](https://www.researchgate.net/profile/Reiner-Birkl), [Diana Wofk](https://dwofk.github.io/), [Peter Wonka](http://peterwonka.net/), [Matthias Müller](https://matthias.pw/)
+
+[[Paper]](https://arxiv.org/abs/2302.12288)
+
+![teaser](assets/zoedepth-teaser.png)
+
 ## **Table of Contents** <!-- omit in toc -->
 - [**Usage**](#usage)
   - [Using torch hub](#using-torch-hub)
@@ -190,7 +200,26 @@ python train_mix.py -m zoedepth_nk --pretrained_resource=""
 ```
 
 ## **Citation**
-TODO: Add reference here after release
+```
+@misc{https://doi.org/10.48550/arxiv.2302.12288,
+  doi = {10.48550/ARXIV.2302.12288},
+  
+  url = {https://arxiv.org/abs/2302.12288},
+  
+  author = {Bhat, Shariq Farooq and Birkl, Reiner and Wofk, Diana and Wonka, Peter and Müller, Matthias},
+  
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {ZoeDepth: Zero-shot Transfer by Combining Relative and Metric Depth},
+  
+  publisher = {arXiv},
+  
+  year = {2023},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+```
 
 
 
