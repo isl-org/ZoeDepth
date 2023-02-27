@@ -46,13 +46,13 @@
     "infer":{
         "train_midas": false,
         "use_pretrained_midas": false,
-        "pretrained_resource" : "local::checkpoints/ZoeD_M12_N.pt",
+        "pretrained_resource" : "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt",
         "force_keep_ar": true
     },
 
     "eval":{
         "train_midas": false,
         "use_pretrained_midas": false,
-        "pretrained_resource" : "local::checkpoints/ZoeD_M12_N.pt"
+        "pretrained_resource" : "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt"
     }
 }

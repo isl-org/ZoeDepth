@@ -51,7 +51,7 @@ def ZoeD_N(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="inf
             n_attractors (List[int]): Number of bin attractors at decoder layers. Defaults to [16, 8, 4, 1].
             attractor_alpha (int): Proportional attractor strength. Refer to models.layers.attractor for more details. Defaults to 1000.
             attractor_gamma (int): Exponential attractor strength. Refer to models.layers.attractor for more details. Defaults to 2.
-            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'sum'.
+            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'mean'.
             attractor_type (str): Type of attractor to use; "inv" (Inverse attractor) or "exp" (Exponential attractor). Defaults to 'inv'.
             min_temp (int): Lower bound for temperature of output probability distribution. Defaults to 0.0212.
             max_temp (int): Upper bound for temperature of output probability distribution. Defaults to 50.
@@ -63,7 +63,7 @@ def ZoeD_N(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="inf
     if not pretrained:
         pretrained_resource = None
     else:
-        pretrained_resource = "local::checkpoints/ZoeD_M12_N.pt"
+        pretrained_resource = "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt"
 
     config = get_config("zoedepth", config_mode, pretrained_resource=pretrained_resource, **kwargs)
     model = build_model(config)
@@ -91,7 +91,7 @@ def ZoeD_K(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="inf
             n_attractors (List[int]): Number of bin attractors at decoder layers. Defaults to [16, 8, 4, 1].
             attractor_alpha (int): Proportional attractor strength. Refer to models.layers.attractor for more details. Defaults to 1000.
             attractor_gamma (int): Exponential attractor strength. Refer to models.layers.attractor for more details. Defaults to 2.
-            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'sum'.
+            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'mean'.
             attractor_type (str): Type of attractor to use; "inv" (Inverse attractor) or "exp" (Exponential attractor). Defaults to 'inv'.
             min_temp (int): Lower bound for temperature of output probability distribution. Defaults to 0.0212.
             max_temp (int): Upper bound for temperature of output probability distribution. Defaults to 50.
@@ -104,7 +104,7 @@ def ZoeD_K(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="inf
     if not pretrained:
         pretrained_resource = None
     else:
-        pretrained_resource = "local::checkpoints/ZoeD_M12_K.pt"
+        pretrained_resource = "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_K.pt"
 
     config = get_config("zoedepth", config_mode, pretrained_resource=pretrained_resource, config_version="kitti", **kwargs)
     model = build_model(config)
@@ -132,7 +132,7 @@ def ZoeD_NK(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="in
             n_attractors (List[int]): Number of bin attractors at decoder layers. Defaults to [16, 8, 4, 1].
             attractor_alpha (int): Proportional attractor strength. Refer to models.layers.attractor for more details. Defaults to 1000.
             attractor_gamma (int): Exponential attractor strength. Refer to models.layers.attractor for more details. Defaults to 2.
-            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'sum'.
+            attractor_kind (str): Attraction aggregation "sum" or "mean". Defaults to 'mean'.
             attractor_type (str): Type of attractor to use; "inv" (Inverse attractor) or "exp" (Exponential attractor). Defaults to 'inv'.
 
             min_temp (int): Lower bound for temperature of output probability distribution. Defaults to 0.0212.
@@ -147,7 +147,7 @@ def ZoeD_NK(pretrained=False, midas_model_type="DPT_BEiT_L_384", config_mode="in
     if not pretrained:
         pretrained_resource = None
     else:
-        pretrained_resource = "local::checkpoints/ZoeD_M12_NK.pt"
+        pretrained_resource = "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_NK.pt"
 
     config = get_config("zoedepth_nk", config_mode, pretrained_resource=pretrained_resource, **kwargs)
     model = build_model(config)

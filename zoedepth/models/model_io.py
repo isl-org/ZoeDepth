@@ -57,7 +57,7 @@ def load_wts(model, checkpoint_path):
 
 
 def load_state_dict_from_url(model, url, **kwargs):
-    state_dict = torch.hub.load_state_dict_from_url(url, **kwargs)
+    state_dict = torch.hub.load_state_dict_from_url(url, map_location='cpu', **kwargs)
     return load_state_dict(model, state_dict)
 
 

@@ -1,5 +1,5 @@
 # **ZoeDepth: Combining relative and metric depth** (Official implementation)  <!-- omit in toc -->
-
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zoedepth-zero-shot-transfer-by-combining/monocular-depth-estimation-on-nyu-depth-v2)](https://paperswithcode.com/sota/monocular-depth-estimation-on-nyu-depth-v2?p=zoedepth-zero-shot-transfer-by-combining)
 ## **Table of Contents** <!-- omit in toc -->
 - [**Usage**](#usage)
   - [Using torch hub](#using-torch-hub)
