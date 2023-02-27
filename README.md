@@ -29,7 +29,7 @@ torch.hub.help("intel-isl/MiDaS", "DPT_BEiT_L_384", force_reload=True)  # Trigge
 ```python
 import torch
 
-repo = "intel-isl/ZoeDepth"
+repo = "isl-org/ZoeDepth"
 # Zoe_N
 model_zoe_n = torch.hub.load(repo, "ZoeD_N", pretrained=True)
 
