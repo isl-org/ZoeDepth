@@ -94,14 +94,14 @@ class RunningAverageDict:
         return {key: value.get_value() for key, value in self._dict.items()}
 
 
-def colorize(value, vmin=None, vmax=None, cmap='gray_r', invalid_val=-99, invalid_mask=None, background_color=(128, 128, 128, 255), gamma_corrected=False, value_transform=None):
+def colorize(value, vmin=None, vmax=None, cmap='turbo_r', invalid_val=-99, invalid_mask=None, background_color=(128, 128, 128, 255), gamma_corrected=False, value_transform=None):
     """Converts a depth map to a color image.
 
     Args:
         value (torch.Tensor, numpy.ndarry): Input depth map. Shape: (H, W) or (1, H, W) or (1, 1, H, W). All singular dimensions are squeezed
         vmin (float, optional): vmin-valued entries are mapped to start color of cmap. If None, value.min() is used. Defaults to None.
         vmax (float, optional):  vmax-valued entries are mapped to end color of cmap. If None, value.max() is used. Defaults to None.
-        cmap (str, optional): matplotlib colormap to use. Defaults to 'magma_r'.
+        cmap (str, optional): matplotlib colormap to use. Defaults to 'turbo_r'.
         invalid_val (int, optional): Specifies value of invalid pixels that should be colored as 'background_color'. Defaults to -99.
         invalid_mask (numpy.ndarray, optional): Boolean mask for invalid regions. Defaults to None.
         background_color (tuple[int], optional): 4-tuple RGB color to give to invalid pixels. Defaults to (128, 128, 128, 255).
@@ -358,7 +358,7 @@ def pil_to_batched_tensor(img):
 def save_raw_16bit(depth, fpath="raw.png"):
     if isinstance(depth, torch.Tensor):
         depth = depth.squeeze().cpu().numpy()
-    
+
     assert isinstance(depth, np.ndarray), "Depth must be a torch tensor or numpy array"
     assert depth.ndim == 2, "Depth must be 2D"
     depth = depth * 256  # scale for 16-bit png
