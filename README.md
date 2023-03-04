@@ -61,7 +61,7 @@ You can use local source for torch hub to load the ZoeDepth models, for example:
 import torch
 
 # Zoe_N
-model_zoe_n = torch.hub.load(".", "ZoeD_N", source="local" pretrained=True)
+model_zoe_n = torch.hub.load(".", "ZoeD_N", source="local", pretrained=True)
 ```
 
 #### or load the models manually
