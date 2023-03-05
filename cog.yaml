@@ -1,0 +1,19 @@
+build:
+  gpu: true
+  python_version: "3.10"
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "libglib2.0-0"
+  python_packages:
+    - "timm==0.6.12"
+    - "torch==1.12.1"
+    - "torchvision==0.13.1"
+    - "wget==3.2"
+    - "opencv-python==4.7.0.68"
+    - "matplotlib==3.6.3"
+    - "scipy==1.9.3"
+
+  run:
+   - mkdir -p /root/.cache/torch/hub/checkpoints/ && wget --output-document "/root/.cache/torch/hub/checkpoints/ZoeD_M12_N.pt" "https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt"  && wget --output-document "/root/.cache/torch/hub/checkpoints/ZoeD_M12_K.pt" "https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_K.pt" && wget --output-document "/root/.cache/torch/hub/checkpoints/ZoeD_M12_NK.pt" "https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_NK.pt"
+
+predict: "predict.py:Predictor"
