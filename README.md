@@ -132,6 +132,9 @@ fpath_colored = "/path/to/output_colored.png"
 Image.fromarray(colored).save(fpath_colored)
 ```
 
+Check out the unofficial Gradio demo for ZoeDepth 
+- [HuggingFace🤗 Demo](https://huggingface.co/spaces/RamAnanth1/ZoeDepth)
+
 ## **Environment setup**
 The project depends on :
 - [pytorch](https://pytorch.org/) (Main framework)
