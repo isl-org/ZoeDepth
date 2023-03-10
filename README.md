@@ -1,5 +1,6 @@
 # **ZoeDepth: Combining relative and metric depth** (Official implementation)  <!-- omit in toc -->
 [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isl-org/ZoeDepth)
+[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg)](https://huggingface.co/spaces/shariqfarooq/ZoeDepth)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) ![PyTorch](https://img.shields.io/badge/PyTorch_v1.10.1-EE4C2C?&logo=pytorch&logoColor=white) 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zoedepth-zero-shot-transfer-by-combining/monocular-depth-estimation-on-nyu-depth-v2)](https://paperswithcode.com/sota/monocular-depth-estimation-on-nyu-depth-v2?p=zoedepth-zero-shot-transfer-by-combining)
@@ -25,6 +26,7 @@
   - [Evaluating offical models](#evaluating-offical-models)
   - [Evaluating local checkpoint](#evaluating-local-checkpoint)
 - [**Training**](#training)
+- [**Gradio demo**](#gradio-demo)
 - [**Citation**](#citation)
 
 
@@ -199,7 +201,17 @@ For training the Zoe-NK model:
 ```bash
 python train_mix.py -m zoedepth_nk --pretrained_resource=""
 ```
+## **Gradio demo**
+We provide a UI demo built using [gradio](https://gradio.app/). To get started, install UI requirements:
+```bash
+pip install -r ui/ui_requirements.txt
+```
+Then launch the gradio UI:
+```bash
+python -m ui.app
+```
 
+The UI is also hosted on HuggingFace🤗 [here](https://huggingface.co/spaces/shariqfarooq/ZoeDepth)
 ## **Citation**
 ```
 @misc{https://doi.org/10.48550/arxiv.2302.12288,
