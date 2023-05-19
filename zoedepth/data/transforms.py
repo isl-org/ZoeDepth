@@ -372,7 +372,7 @@ class Rescale(object):
         if self.__use_mask:
             mask = sample["mask"]
         else:
-            mask = np.ones_like(disp, dtype=np.bool)
+            mask = np.ones_like(disp, dtype=bool)
 
         if np.sum(mask) == 0:
             return sample
