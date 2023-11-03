@@ -151,7 +151,7 @@ class DepthModel(nn.Module):
             raise ValueError(f"output_type {output_type} not supported. Supported values are 'numpy', 'pil' and 'tensor'")
 
     @torch.no_grad()
-    def infer_cv(self, cv_img, pad_input: bool = True, with_flip_aug: bool = True, output_type: str = "numpy", **kwargs) -> Union[np.ndarray, torch.Tensor]:
+    def infer_cv(self, cv_img, pad_input: bool=True, with_flip_aug: bool=True, output_type: str="numpy", **kwargs) -> Union[np.ndarray, torch.Tensor]:
         """
         Inference interface for the model for a NumPy image loaded via OpenCV (BGR format)
         Args:
