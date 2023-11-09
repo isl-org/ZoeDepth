@@ -54,6 +54,7 @@ for b in model_zoe_n.core.core.pretrained.model.blocks:
     b.drop_path = torch.nn.Identity()
 
 model = model_zoe_n
+zoe = model_zoe_n.to(DEVICE)
 
 title = "# ZoeDepth"
 description = """Official demo for **ZoeDepth: Zero-shot Transfer by Combining Relative and Metric Depth**.
