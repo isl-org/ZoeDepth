@@ -43,7 +43,17 @@ css = """
     
 """
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-model = torch.hub.load('isl-org/ZoeDepth', "ZoeD_N", pretrained=True).to(DEVICE).eval()
+
+# https://github.com/isl-org/ZoeDepth/issues/82#issuecomment-1779799540
+repo = "isl-org/ZoeDepth"
+
+model_zoe_n = torch.hub.load(repo, "ZoeD_N", pretrained=False)
+pretrained_dict = torch.hub.load_state_dict_from_url('https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt', map_location=DEVICE)
+model_zoe_n.load_state_dict(pretrained_dict['model'], strict=False)
+for b in model_zoe_n.core.core.pretrained.model.blocks:
+    b.drop_path = torch.nn.Identity()
+
+model = model_zoe_n
 
 title = "# ZoeDepth"
 description = """Official demo for **ZoeDepth: Zero-shot Transfer by Combining Relative and Metric Depth**.

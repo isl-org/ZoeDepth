@@ -44,13 +44,26 @@ import torch
 
 repo = "isl-org/ZoeDepth"
 # Zoe_N
-model_zoe_n = torch.hub.load(repo, "ZoeD_N", pretrained=True)
+model_zoe_n = torch.hub.load(repo, "ZoeD_N", pretrained=False)
+pretrained_dict = torch.hub.load_state_dict_from_url('https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt', map_location=DEVICE)
+model_zoe_n.load_state_dict(pretrained_dict['model'], strict=False)
+for b in model_zoe_n.core.core.pretrained.model.blocks:
+    b.drop_path = torch.nn.Identity()
 
 # Zoe_K
-model_zoe_k = torch.hub.load(repo, "ZoeD_K", pretrained=True)
+model_zoe_k = torch.hub.load(repo, "ZoeD_K", pretrained=False)
+pretrained_dict = torch.hub.load_state_dict_from_url('https://github.com/isl-org/ZoeDepth/releases/#download/v1.0/ZoeD_M12_K.pt', map_location=DEVICE)
+model_zoe_k.load_state_dict(pretrained_dict['model'], strict=False)
+for b in model_zoe_k.core.core.pretrained.model.blocks:
+    b.drop_path = torch.nn.Identity()
 
 # Zoe_NK
-model_zoe_nk = torch.hub.load(repo, "ZoeD_NK", pretrained=True)
+model_zoe_nk = torch.hub.load(repo, "ZoeD_NK", pretrained=False)
+pretrained_dict = torch.hub.load_state_dict_from_url('https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_NK.pt', map_location=DEVICE)
+model_zoe_nk.load_state_dict(pretrained_dict['model'], strict=False)
+for b in model_zoe_nk.core.core.pretrained.model.blocks:
+    b.drop_path = torch.nn.Identity()
+
 ```
 ### Using local copy
 Clone this repo:
