@@ -34,7 +34,7 @@ def predict_depth(model, image):
 def create_demo(model):
     gr.Markdown("### Depth Prediction demo")
     with gr.Row():
-        input_image = gr.Image(label="Input Image", type='pil', elem_id='img-display-input').style(height="auto")
+        input_image = gr.Image(label="Input Image", type='pil', elem_id='img-display-input')
         depth_image = gr.Image(label="Depth Map", elem_id='img-display-output')
     raw_file = gr.File(label="16-bit raw depth, multiplier:256")
     submit = gr.Button("Submit")
