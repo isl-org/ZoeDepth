@@ -251,8 +251,7 @@ def compute_metrics(gt, pred, interpolate=True, garg_crop=False, eigen_crop=True
 def parallelize(config, model, find_unused_parameters=True):
 
     if config.gpu is not None:
-        torch.cuda.set_device(config.gpu)
-        model = model.cuda(config.gpu)
+        model = model.cuda()
 
     config.multigpu = False
     if config.distributed:
